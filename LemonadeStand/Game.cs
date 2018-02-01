@@ -35,16 +35,19 @@ namespace LemonadeStand
             switch (userInput)
             {
                 case "7":
-                    Console.WriteLine("Wonderful! Let's get started with your 7 day adventure by purchasing your ingredients!\n");
-                    //instantiate or call method in inventory
+                    Console.WriteLine("Wonderful! Let's get started with your 7 day adventure by purchasing your ingredients! You will begin with $200 for your new business.\n");
+                    Inventory ingredient7 = new Inventory();
+                    ingredient7.IngredientPrices();
                     break;
                 case "14":
-                    Console.WriteLine("Wonderful! Let's get started with your 14 day adventure by purchasing your ingredients!\n");
-
+                    Console.WriteLine("Wonderful! Let's get started with your 14 day adventure by purchasing your ingredients! You will begin with $200 for your new business\n");
+                    Inventory ingredient14 = new Inventory();
+                    ingredient14.IngredientPrices();
                     break;
                 case "21":
-                    Console.WriteLine("Wonderful! Let's get started with your 21 day adventure by purchasing your ingredients!\n");
-
+                    Console.WriteLine("Wonderful! Let's get started with your 21 day adventure by purchasing your ingredients! You will begin with $200 for your new business\n");
+                    Inventory ingredient21 = new Inventory();
+                    ingredient21.IngredientPrices();
                     break;
                 default:
                     Console.WriteLine("You must pick either 7, 14, or 21 days to run your lemonade stand business.\n");
