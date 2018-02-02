@@ -49,11 +49,14 @@ namespace LemonadeStand
         }
         public void IngredientPrices()
         {
-            Console.WriteLine("To run a successful Lemonade stand, you're going to need cups, lemons, sugar and ice.\nCups cost:\n$15.30 for 50 cups\nLemons cost:\n$22.90 for 30 Lemons\nSugar costs:\n$15.70 for 20 cups\nIce costs:\n$21.90 for 250 ice cubes.\n");
-
-            Player lemonade = new Player();
-            lemonade.CostOfLemonade();
-
+            Console.WriteLine("You are starting the game with $200. To run a successful Lemonade stand, you're going to need cups, lemons, sugar and ice.\nCups cost:\n$15.30 for 50 cups\nLemons cost:\n$22.90 for 30 Lemons\nSugar costs:\n$15.70 for 20 cups\nIce costs:\n$21.90 for 250 ice cubes.\n");
+            //put this in userInterface class? and create new method in Game class that does the actual math for the ingredients?
+            Player recipe = new Player();
+            recipe.GetIngredients();
+        }
+        public void PlayerBank()
+        {
+            //this will be the method where the math is done. $200 to start with, keeps updating based on ingredient purchases and customer purchases. running total
         }
     }
 }

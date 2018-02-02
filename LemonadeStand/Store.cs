@@ -16,7 +16,7 @@ namespace LemonadeStand
         {
 
         }
-        private void RunningTotalProfits()//adds the profits from every day and gives total profits or money lost on business, end of game
+        private void RunTotalProfits()//adds the profits from every day and gives total profits or money lost on business, end of game
         {
 
         }

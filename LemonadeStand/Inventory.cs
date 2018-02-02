@@ -11,7 +11,7 @@ namespace LemonadeStand
       
         public void CurrentStock()
         {
-
+            //this will be displayed to the user at the end of each day and show them how much they have remaining. will have to instantiate with 
         }
     }
 }
