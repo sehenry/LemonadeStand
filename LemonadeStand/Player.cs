@@ -8,9 +8,15 @@ namespace LemonadeStand
 {
     class Player
     {
+        public string lemonadePrice;
         public void MakeLemonade()
         {
 
+        }
+         public void CostOfLemonade()
+        {
+            Console.WriteLine("Okay, so now that you know the weather for today, how much do you want to charge for a cup of lemonade? Keep in mind, the colder it is, the less you should charge to try and get more customers.\n");
+        
         }
     }
 }
