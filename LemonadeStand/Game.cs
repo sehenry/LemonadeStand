@@ -34,26 +34,26 @@ namespace LemonadeStand
 
             switch (userInput)
             {
-                case "7":
-                    //Console.WriteLine("Wonderful! Let's get started with your 7 day adventure by purchasing your ingredients! You will begin with $200 for your new business.\n");
-                    //Inventory ingredient7 = new Inventory();
-                    //ingredient7.IngredientPrices();
-                    //break;
-                case "14":
-                    //Console.WriteLine("Wonderful! Let's get started with your 14 day adventure by purchasing your ingredients! You will begin with $200 for your new business\n");
-                    //Inventory ingredient14 = new Inventory();
-                    //ingredient14.IngredientPrices();
-                    //break;
+                case "7":                    
+                case "14":                    
                 case "21":
-                    Console.WriteLine($"Wonderful! Let's get started with your {userInput} day adventure by purchasing your ingredients! You will begin with $200 for your new business\n");
-                    Inventory ingredient = new Inventory();
-                    ingredient.IngredientPrices();
+                    Console.WriteLine($"Wonderful! Let's get started with your {userInput} day adventure by checking out the weather today!\n");
+                    Weather weather = new Weather();
+                    weather.GenerateWeather();
                     break;
                 default:
                     Console.WriteLine("You must pick either 7, 14, or 21 days to run your lemonade stand business.\n");
                     ChooseDays();
                     break;
             }
+        }
+        public void IngredientPrices()
+        {
+            Console.WriteLine("To run a successful Lemonade stand, you're going to need cups, lemons, sugar and ice.\nCups cost:\n$15.30 for 50 cups\nLemons cost:\n$22.90 for 30 Lemons\nSugar costs:\n$15.70 for 20 cups\nIce costs:\n$21.90 for 250 ice cubes.\n");
+
+            Player lemonade = new Player();
+            lemonade.CostOfLemonade();
+
         }
     }
 }

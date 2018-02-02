@@ -11,23 +11,22 @@ namespace LemonadeStand
         public string weather;
         public int temperature;
 
-        public void GetWeather()
-        {
-            Console.WriteLine("Let's check out the weather so you can better plan your purchases for today. Sound good?\n");
-            string userInput = Console.ReadLine();
+        //public void GetWeather()
+        //{
+        //    Console.WriteLine("Let's check out the weather so you can better plan your purchases for today. Sound good?\n");
+        //    string userInput = Console.ReadLine();
 
-            switch (userInput)
-            {
-                case "yes":
-                    GenerateWeather();
-                    break;
-                                 
-                default:
-                    Console.WriteLine("Please just enter yes. It DOES sound good I promise.");
-                    GetWeather();
-                    break;
-            }
-        }
+        //    switch (userInput)
+        //    {
+        //        case "yes":
+        //            GenerateWeather();
+        //            break;                                 
+        //        default:
+        //            Console.WriteLine("Please just enter yes. It DOES sound good I promise.");
+        //            GetWeather();
+        //            break;
+        //    }
+        //}
         public void GenerateWeather()
         {
             Random random = new Random();
@@ -48,6 +47,12 @@ namespace LemonadeStand
             };
             temperature = temperatureOptions[random.Next(0, temperatureOptions.Length)];
             Console.WriteLine($"The temperature is: {temperature}");
+            Console.ReadLine();
+
+            Game ingredients = new Game();
+            ingredients.IngredientPrices();
+
+           
         }
     }
 }
