@@ -13,7 +13,7 @@ namespace LemonadeStand
 
         public void GetWeather()
         {
-            Console.WriteLine("Let's check out the weather so you can better plan your purchases for today. Sound good?");
+            Console.WriteLine("Let's check out the weather so you can better plan your purchases for today. Sound good?\n");
             string userInput = Console.ReadLine();
 
             switch (userInput)
@@ -21,13 +21,12 @@ namespace LemonadeStand
                 case "yes":
                     GenerateWeather();
                     break;
-              
+                                 
                 default:
-                    Console.WriteLine("Please just enter yes. It does sound good.");
+                    Console.WriteLine("Please just enter yes. It DOES sound good I promise.");
                     GetWeather();
                     break;
             }
-
         }
         public void GenerateWeather()
         {
