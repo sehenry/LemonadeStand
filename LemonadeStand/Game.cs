@@ -56,6 +56,8 @@ namespace LemonadeStand
         }
         public void PlayerBank()
         {
+            
+
             //this will be the method where the math is done. $200 to start with, keeps updating based on ingredient purchases and customer purchases. running total
         }
     }

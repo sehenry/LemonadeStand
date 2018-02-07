@@ -24,10 +24,33 @@ namespace LemonadeStand
         }
         public void GetIngredients()
         {
-            Console.WriteLine("How many cups would you like?");//have this for each ingredient they need to but. must be instantiated with the Game class, playerBank method and subtract accordingly. Also
+            //have this for each ingredient they need to but. must be instantiated with the Game class, playerBank method and subtract accordingly. Also
             //must be instantiated with the inventory to keep track of how much the player has
             //will be where the user can purchase each ingredient for their lemonade stand. must instantiate with the method that does the math for the recipe/purchasing
+            Console.WriteLine("How many cups would you like?");
+            string userInputCup = Console.ReadLine();
+            int cupsPurchased;
+            cupsPurchased = Int32.Parse(userInputCup);
             Console.ReadLine();
+
+            Console.WriteLine("How many lemons?\n");
+            string userInputLemon = Console.ReadLine();
+            int lemonsPurchased;
+            lemonsPurchased = Int32.Parse(userInputLemon);
+            Console.ReadLine();
+
+            Console.WriteLine("How many cups of sugar?\n");
+            string userInputSugar = Console.ReadLine();
+            int sugarPurchased;
+            sugarPurchased = Int32.Parse(userInputSugar);
+            Console.ReadLine();
+
+            Console.WriteLine("And, finally, how much ice?\n");
+            string userInputIce = Console.ReadLine();
+            int icePurchased;
+            icePurchased = Int32.Parse(userInputIce);
+            Console.ReadLine();
+
             MakeLemonade();
            
         }
