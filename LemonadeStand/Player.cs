@@ -31,24 +31,23 @@ namespace LemonadeStand
             string userInputCup = Console.ReadLine();
             int cupsPurchased;
             cupsPurchased = Int32.Parse(userInputCup);
-            Console.ReadLine();
-
+            
             Console.WriteLine("How many lemons?\n");
             string userInputLemon = Console.ReadLine();
             int lemonsPurchased;
             lemonsPurchased = Int32.Parse(userInputLemon);
-            Console.ReadLine();
-
+           
             Console.WriteLine("How many cups of sugar?\n");
             string userInputSugar = Console.ReadLine();
             int sugarPurchased;
             sugarPurchased = Int32.Parse(userInputSugar);
-            Console.ReadLine();
-
+           
             Console.WriteLine("And, finally, how much ice?\n");
             string userInputIce = Console.ReadLine();
             int icePurchased;
             icePurchased = Int32.Parse(userInputIce);
+            
+            Console.WriteLine($"So, for today you have {cupsPurchased} cups, {lemonsPurchased} lemons, {sugarPurchased} cups of sugar and {icePurchased} ice cubes. Now, let's make your lemonade recipe!\n");
             Console.ReadLine();
 
             MakeLemonade();

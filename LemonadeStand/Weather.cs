@@ -30,8 +30,8 @@ namespace LemonadeStand
                 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100
             };
             temperature = temperatureOptions[random.Next(0, temperatureOptions.Length)];
-            Console.WriteLine($"The temperature is: {temperature}");
-            Console.ReadLine();
+            Console.WriteLine($"The temperature is: {temperature}\n");
+            //Console.ReadLine();
 
             Player lemonade = new Player();
             lemonade.CostOfLemonade();
