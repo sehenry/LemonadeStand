@@ -8,6 +8,7 @@ namespace LemonadeStand
 {
     class Weather
     {
+        // member variables (HAS A)
         public string weather;
         public int temperature;
 
@@ -31,11 +32,16 @@ namespace LemonadeStand
             };
             temperature = temperatureOptions[random.Next(0, temperatureOptions.Length)];
             Console.WriteLine($"The temperature is: {temperature}\n");
-            //Console.ReadLine();
-
-            Player lemonade = new Player();
-            lemonade.CostOfLemonade();
 
         }
+        //public string DisplayWeatherTemperature()
+        //{
+           
+        //    Console.WriteLine(weather + " and " + temperature);
+            
+
+        //    Console.ReadLine();
+            
+        //}
     }
 }

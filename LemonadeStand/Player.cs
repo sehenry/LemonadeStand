@@ -8,18 +8,12 @@ namespace LemonadeStand
 {
     class Player
     {
-        public string lemonadePrice;
-       
-         public void CostOfLemonade()
+        public Inventory inventory;
+        public Recipe recipe;
+
+        public Player()
         {
-            Console.WriteLine("Okay, so now that you know the weather for today, how much do you want to charge for a cup of lemonade? Keep in mind, the colder it is, the less you should charge to try and get more customers. On the flip side, if it's hot, raise those prices! Lemonade will be in high demand!\n");
-            string userInput = Console.ReadLine();
-
-            lemonadePrice = userInput;
-            Console.ReadLine();
-
-            Game ingredients = new Game();
-            ingredients.IngredientPrices();
+            recipe = new Recipe();
 
         }
         public void GetIngredients()
@@ -48,15 +42,45 @@ namespace LemonadeStand
             icePurchased = Int32.Parse(userInputIce);
             
             Console.WriteLine($"So, for today you have {cupsPurchased} cups, {lemonsPurchased} lemons, {sugarPurchased} cups of sugar and {icePurchased} ice cubes. Now, let's make your lemonade recipe!\n");
-            Console.ReadLine();
+            
 
-            MakeLemonade();
+            //RecipeDecision();
            
         }
-        public void MakeLemonade()
+        public void RecipeDecision()//must call this every single day of game play so they can change their mind
         {
-            Console.WriteLine("You have your ingredients, now it's time to decide your recipe for your lemonade. Some customers may be more willing to purchase, or pay more if you have more sugar, lemons or ice in your recipe. Keep that in mind.\n");//this is where they decide how much of each ingredient to put in their lemonade
-            Console.WriteLine("");//have a writeline for each ingredient, userinput that will add to their inventory for each item, and money that will subtract from their bank based on input
+            Console.WriteLine("If you would like to use the standard recipe that has already been set, type 'computer recipe'. You may want to use this option if you are just starting out. If you want to make your own recipe, please enter 'hell yes'.\n");
+            string userInput = Console.ReadLine();
+
+            switch (userInput)
+            {
+                case "computer recipe":
+                    recipe.ComputerRecipe();
+                    break;
+                case "hell yes":
+                    recipe.MakeLemonade();
+                    break;
+                default:
+                    Console.WriteLine("Please enter 'computer recipe' to utilize our pre-made lemonade recipe or 'hell yes' to create your own!\n");
+                    RecipeDecision();
+                    break;
+            }
+        }
+
+        public void CostOfLemonade()
+        {
+            string lemonadePrice;
+
+            Console.WriteLine("You have your inventory, you've made your recipe and you know the weather. Now, how much will you charge for a cup of lemonade? Keep in mind, the colder it is, the less you should charge to try and get more customers. On the flip side, if it's hot, raise those prices! Lemonade will be in high demand!\n");
+            string userInput = Console.ReadLine();
+
+            lemonadePrice = userInput;
+
+        }
+        public void PlayerBank()
+        {
+
+            //this will be the method where the math is done. $200 to start with, keeps updating based on ingredient purchases and customer purchases. running total
         }
     }
 }
