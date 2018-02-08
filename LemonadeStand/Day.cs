@@ -15,6 +15,7 @@ namespace LemonadeStand
         public Day()
         {
             weather = new Weather();
+            inventory = new Inventory();
         }
         public void GetDay()
         {

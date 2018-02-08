@@ -14,6 +14,7 @@ namespace LemonadeStand
         public Player()
         {
             recipe = new Recipe();
+            inventory = new Inventory();
 
         }
         public void GetIngredients()
@@ -42,10 +43,7 @@ namespace LemonadeStand
             icePurchased = Int32.Parse(userInputIce);
             
             Console.WriteLine($"So, for today you have {cupsPurchased} cups, {lemonsPurchased} lemons, {sugarPurchased} cups of sugar and {icePurchased} ice cubes. Now, let's make your lemonade recipe!\n");
-            
-
-            //RecipeDecision();
-           
+     
         }
         public void RecipeDecision()//must call this every single day of game play so they can change their mind
         {

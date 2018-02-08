@@ -10,6 +10,8 @@ namespace LemonadeStand
     {
         // member variables (HAS A)
         public Player player;
+        public Store store;
+        public Customer customer;
         public List<Day> days;
         public int dayCounter;
 
@@ -17,15 +19,20 @@ namespace LemonadeStand
         public Game()
         {
             player = new Player();
-            //Console.WriteLine("A NEW GAME IS MADE!");
-            //player = new Player();
-            //dayCounter = 0;
-            //days = new List<Day>();
+            store = new Store();
+            customer = new Customer();
+            days = new List<Day>();
+            dayCounter = 0;
         }
         public void RunGame()
         {
             GameRules();
             ChooseDays();
+            //LOOP STARTS HERE
+            //for(int i = 0; i < 7; i++)
+            //{
+            //    days.Add(new Day());
+            //}
 
             IngredientPrices();
             player.GetIngredients();
@@ -33,7 +40,8 @@ namespace LemonadeStand
             player.CostOfLemonade();
             //game rules, user learns how to play the game
             //player chooses how many days they want to play
-            //LOOP STARTS HERE
+       
+            
             //player gets shown cost of ingredients
             //player buys ingredients from store
             //cost of ingredients gets subtracted from player bank
@@ -78,12 +86,7 @@ namespace LemonadeStand
 
             switch (userInput)
             {
-                case "7":    
-                    //for(int i = 0; i < 7; i++)
-                    //{
-                    //    days.Add(new Day());
-                    //}
-                    //break;             
+                case "7":                
                 case "14":                    
                 case "21":
                     Console.WriteLine($"Wonderful! Let's get started with your {userInput} day adventure by checking out the weather today!\n");                             
@@ -97,9 +100,6 @@ namespace LemonadeStand
         public void IngredientPrices()
         {
             Console.WriteLine("You are starting the game with $200. To run a successful Lemonade stand, you're going to need cups, lemons, sugar and ice.\nCups cost:\n$15.30 for 50 cups\nLemons cost:\n$22.90 for 30 Lemons\nSugar costs:\n$15.70 for 20 cups\nIce costs:\n$21.90 for 250 ice cubes.\n");
-            //put this in userInterface class? and create new method in Game class that does the actual math for the ingredients?
-            
-            //player.GetIngredients();// (days[dayCounter].weather);
         }
         
        

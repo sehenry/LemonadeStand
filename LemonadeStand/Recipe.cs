@@ -13,15 +13,13 @@ namespace LemonadeStand
             Console.WriteLine("The computer recipe will use 4 lemons, 4 cups of sugar and 4 ice cubes. You can choose to create your own recipe any day you'd like moving forward.\n");
             Weather todaysWeather = new Weather();
             todaysWeather.GenerateWeather();
-
-            //CostOfLemonade();
         }
 
         public void MakeLemonade()
         {
             Console.WriteLine("You have your ingredients, now it's time to decide your recipe for your lemonade. Some customers may be more willing to purchase, or pay more if you have more sugar, lemons or ice in your recipe. Keep that in mind.\n");
 
-            Console.WriteLine("How many lemons do you want to use per lemonade? (computer uses 4)\n");//have a writeline for each ingredient, userinput that will add to their inventory for each item, and money that will subtract from their bank based on input
+            Console.WriteLine("How many lemons do you want to use per lemonade? (computer uses 4)\n");
             string userInputLemon = Console.ReadLine();
             int lemonsUsedForRecipe;
             lemonsUsedForRecipe = Int32.Parse(userInputLemon);
@@ -40,9 +38,6 @@ namespace LemonadeStand
 
             Weather todaysWeather = new Weather();
             todaysWeather.GenerateWeather();
-
-            //CostOfLemonade();
-
         }
     }
 }
