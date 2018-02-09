@@ -21,11 +21,11 @@ namespace LemonadeStand
         {
             //this method will keep track, and be on a loop day by day as the user plays. will stop and instantiate with the function that ends the game and shows total profits
         }
-        private void DailyLemonadesPurchased()//method that will multiply the cost of lemonade by the total customer purchases
+        public void DailyLemonadesPurchased()//method that will multiply the cost of lemonade by the total customer purchases
         {
 
         }
-        private void DisplayDailyProfits()//subtracts money spent on ingredients, adds money customers spent. gived total money
+        public void DisplayDailyProfits()//subtracts money spent on ingredients, adds money customers spent. gived total money
         {
 
         }

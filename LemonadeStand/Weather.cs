@@ -34,14 +34,5 @@ namespace LemonadeStand
             Console.WriteLine($"The temperature is: {temperature}\n");
 
         }
-        //public string DisplayWeatherTemperature()
-        //{
-           
-        //    Console.WriteLine(weather + " and " + temperature);
-            
-
-        //    Console.ReadLine();
-            
-        //}
     }
 }

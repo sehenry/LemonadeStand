@@ -14,6 +14,9 @@ namespace LemonadeStand
         public Customer customer;
         public List<Day> days;
         public int dayCounter;
+        public Bank bank;
+        public Inventory inventory;
+        public Day day;
 
         // constructor (SPAWNER)
         public Game()
@@ -23,43 +26,45 @@ namespace LemonadeStand
             customer = new Customer();
             days = new List<Day>();
             dayCounter = 0;
+            bank = new Bank();
+            inventory = new Inventory();
+            day = new Day();
         }
         public void RunGame()
         {
             GameRules();
-            ChooseDays();
-            //LOOP STARTS HERE
-            //for(int i = 0; i < 7; i++)
-            //{
-            //    days.Add(new Day());
-            //}
+            int numberOfDays = ChooseDays();
 
-            IngredientPrices();
-            player.GetIngredients();
-            player.RecipeDecision();
-            player.CostOfLemonade();
-            //game rules, user learns how to play the game
-            //player chooses how many days they want to play
+            for (int i = 0; i < numberOfDays; i++)
+            {
        
-            
-            //player gets shown cost of ingredients
-            //player buys ingredients from store
-            //cost of ingredients gets subtracted from player bank
-            //ingredients get added to inventory
-            //player makes recipe, or uses computer recipe         
-            //weather gets checked for the day
-            //player decides how much to charge for lemonade
-            //player starts day
-            //customers 'buy' lemonade based on their designated preferences on weather, cost, recipe of lemonade
-            //inventory subtract the amount of lemons, sugar, cups and ice that were 'purchased' by customers that day
-            //each purchased lemonade will subtract the amount of ingredients used per lemonade that the user picked. 
-            //game totals the sales for the day
-            //inventory subtracts the ingredients used for the day
-            //game reports profits to user for the day
-            //game reports current inventory to user
-            //player moves onto next day and chooses to purchase ingredients, and make recipe again
-        }
+                //IngredientPrices();
+                //player.GetIngredients(store, bank, inventory);
+                ////cost of ingredients gets subtracted from player bank
+                ////ingredients get added to inventory
+                //player.RecipeDecision();
+                //player.CostOfLemonade();
 
+                ////player starts day
+
+                //customer.PotentialCustomers();
+                //day.DailyLemonadesPurchased();
+                //bank.AddMoney();
+                //inventory.SubtractInventory();
+
+                //day.DisplayDailyProfits();
+                //inventory.DisplayCurrentStock();
+                
+
+                //inventory subtract the amount of lemons, sugar, cups and ice that were 'purchased' by customers that day
+                //each purchased lemonade will subtract the amount of ingredients used per lemonade that the user picked. 
+                //game totals the sales for the day
+                //inventory subtracts the ingredients used for the day
+                //game reports profits to user for the day
+                //game reports current inventory to user
+                //player moves onto next day and chooses to purchase ingredients, and make recipe again
+            }
+        }
         // member methods (CAN DO)
         public void GameRules()
         {
@@ -79,23 +84,26 @@ namespace LemonadeStand
                     break;
             }
         }
-        public void ChooseDays()
+        public int ChooseDays()
         {
             Console.WriteLine("How many days would you like to play for? 7, 14 or 21?\n");
             string userInput = Console.ReadLine();
+            int numberOfDays = 0;
 
             switch (userInput)
             {
                 case "7":                
                 case "14":                    
                 case "21":
-                    Console.WriteLine($"Wonderful! Let's get started with your {userInput} day adventure by checking out the weather today!\n");                             
+                    numberOfDays = Int32.Parse(userInput);
+                    Console.WriteLine($"Wonderful! Let's get started with your {userInput} day adventure!\n");                             
                     break;
                 default:
                     Console.WriteLine("You must pick either 7, 14, or 21 days to run your lemonade stand business.\n");
                     ChooseDays();
                     break;
             }
+            return numberOfDays;
         }
         public void IngredientPrices()
         {

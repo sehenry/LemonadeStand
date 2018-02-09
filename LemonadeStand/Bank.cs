@@ -8,5 +8,27 @@ namespace LemonadeStand
 {
     class Bank
     {
+        double playerMoney = 200;
+
+        public double GetBalance()
+        {
+            return playerMoney;
+        }
+
+        public void AddMoney()
+        {
+           
+        }
+       
+        public bool SubtractMoney(double costAmount)
+        {
+            
+            if (playerMoney - costAmount >= 0)
+            {
+                playerMoney -= costAmount;
+                return true;
+            }
+            return false;
+        }
     }
 }

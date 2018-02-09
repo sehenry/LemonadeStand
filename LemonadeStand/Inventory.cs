@@ -7,21 +7,24 @@ using System.Threading.Tasks;
 namespace LemonadeStand
 {
     class Inventory
-    {//am I going to need seperate methods for each ingredient...?
-        public int numberOfLemons;
-        public int numberOfCups;
-        public int numberOfSugar;
-        public int numberOfIce;
-      
-        public void CurrentStock()
+    {
+        List<Lemons> lemons;
+        List<Cups> cups;
+        List<Sugar> sugar;
+        List<Ice> ice;
+
+        public Inventory()
         {
-            //Player stock = new Player();
-            //stock.GetIngredients();
+            lemons = new List<Lemons>();
+            cups = new List<Cups>();
+            sugar = new List<Sugar>();
+            ice = new List<Ice>();
+        }
 
-            int currentInventory;
-
-            
-            //this will be displayed to the user at the end of each day and show them how much they have remaining. will have to instantiate with 
+        public void BuyLemons(int numberToBuy, Bank bank)
+        {
+            Store store = new Store();
+            lemons.AddRange(store.SellLemons(numberToBuy, bank));
         }
     }
 }
