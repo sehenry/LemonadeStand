@@ -10,6 +10,7 @@ namespace LemonadeStand
     {
         protected double cost;
         protected string name;
+        protected double bulkCost;
 
         public double GetCost()
         {
@@ -19,6 +20,10 @@ namespace LemonadeStand
         public string GetName()
         {
             return name;
+        }
+        public double GetBulkCost()
+        {
+            return bulkCost;
         }
     }
 }

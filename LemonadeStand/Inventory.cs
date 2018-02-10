@@ -20,11 +20,26 @@ namespace LemonadeStand
             sugar = new List<Sugar>();
             ice = new List<Ice>();
         }
-
+        Store store = new Store();
         public void BuyLemons(int numberToBuy, Bank bank)
         {
-            Store store = new Store();
+            
             lemons.AddRange(store.SellLemons(numberToBuy, bank));
+        }
+
+        public void BuyCups(int numberToBuy, Bank bank)
+        {
+            cups.AddRange(store.SellCups(numberToBuy, bank));
+        }
+
+        public void BuySugar(int numberToBuy, Bank bank)
+        {
+            sugar.AddRange(store.SellSugar(numberToBuy, bank));
+        }
+
+        public void BuyIce(int numberToBuy, Bank bank)
+        {
+            ice.AddRange(store.SellIce(numberToBuy, bank));
         }
     }
 }

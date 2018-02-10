@@ -11,7 +11,8 @@ namespace LemonadeStand
         public Cups()
         {
             name = "cup";
-            cost = 15.30;
+            cost = .32;
+            bulkCost = 15.30;
         }
     }
 }

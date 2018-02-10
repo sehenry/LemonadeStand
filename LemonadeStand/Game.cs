@@ -37,24 +37,24 @@ namespace LemonadeStand
 
             for (int i = 0; i < numberOfDays; i++)
             {
-       
-                //IngredientPrices();
-                //player.GetIngredients(store, bank, inventory);
-                ////cost of ingredients gets subtracted from player bank
-                ////ingredients get added to inventory
-                //player.RecipeDecision();
-                //player.CostOfLemonade();
 
-                ////player starts day
+                IngredientPrices(bank);
+                player.GetIngredients(store, bank, inventory);
+                //cost of ingredients gets subtracted from player bank
+                //ingredients get added to inventory
+                player.RecipeDecision();
+                player.CostOfLemonade();
 
-                //customer.PotentialCustomers();
-                //day.DailyLemonadesPurchased();
+                //player starts day
+
+                customer.PotentialCustomers();
+                day.DailyLemonadesPurchased();
                 //bank.AddMoney();
                 //inventory.SubtractInventory();
 
-                //day.DisplayDailyProfits();
+                day.DisplayDailyProfits();
                 //inventory.DisplayCurrentStock();
-                
+
 
                 //inventory subtract the amount of lemons, sugar, cups and ice that were 'purchased' by customers that day
                 //each purchased lemonade will subtract the amount of ingredients used per lemonade that the user picked. 
@@ -105,9 +105,10 @@ namespace LemonadeStand
             }
             return numberOfDays;
         }
-        public void IngredientPrices()
+        public void IngredientPrices(Bank bank)
         {
-            Console.WriteLine("You are starting the game with $200. To run a successful Lemonade stand, you're going to need cups, lemons, sugar and ice.\nCups cost:\n$15.30 for 50 cups\nLemons cost:\n$22.90 for 30 Lemons\nSugar costs:\n$15.70 for 20 cups\nIce costs:\n$21.90 for 250 ice cubes.\n");
+           double currentMoney = bank.GetBalance();
+            Console.WriteLine($"You currently have {currentMoney} in your bank. To run a successful Lemonade stand, you're going to need cups, lemons, sugar and ice. You can buy in bulk, using the number shown, or buy a different amount of your choosing.\nCups cost:\n$15.30 for 50 cups, .32 per cup\nLemons cost:\n$22.90 for 30 Lemons, .80 per lemon\nSugar costs:\n$15.70 for 20 cups, .80 per cup of sugar\nIce costs:\n$21.90 for 250 ice cubes, .09 per cube.\n");
         }
         
        

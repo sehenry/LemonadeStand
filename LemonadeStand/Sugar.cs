@@ -11,7 +11,8 @@ namespace LemonadeStand
         public Sugar()
         {
             name = "sugar";
-            cost = 15.70;
+            cost = .80;
+            bulkCost = 15.70;
         }
     }
 }

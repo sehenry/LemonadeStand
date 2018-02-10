@@ -27,32 +27,24 @@ namespace LemonadeStand
             int cupsPurchased;
             cupsPurchased = Int32.Parse(userInputCup);
             store.SellCups(cupsPurchased, bank);
-            //bank.SubtractMoney();
-            //inventory.AddInventory();
             
             Console.WriteLine("How many lemons?\n");
             string userInputLemon = Console.ReadLine();
             int lemonsPurchased;
             lemonsPurchased = Int32.Parse(userInputLemon);
-            store.SellLemons();
-            //bank.SubtractMoney();
-            //inventory.AddInventory();
+            store.SellLemons(lemonsPurchased, bank);
 
             Console.WriteLine("How many cups of sugar?\n");
             string userInputSugar = Console.ReadLine();
             int sugarPurchased;
             sugarPurchased = Int32.Parse(userInputSugar);
-            store.GetCostOfSugar();
-            //bank.SubtractMoney();
-            //inventory.AddInventory();
+            store.SellSugar(sugarPurchased, bank);
 
             Console.WriteLine("And, finally, how much ice?\n");
             string userInputIce = Console.ReadLine();
             int icePurchased;
             icePurchased = Int32.Parse(userInputIce);
-            store.GetCostOfIce();
-            //bank.SubtractMoney();
-            //inventory.AddInventory();
+            store.SellIce(icePurchased, bank);
 
             Console.WriteLine($"So, for today you have {cupsPurchased} cups, {lemonsPurchased} lemons, {sugarPurchased} cups of sugar and {icePurchased} ice cubes. Now, let's make your lemonade recipe!\n");
      
