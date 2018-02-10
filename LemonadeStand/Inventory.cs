@@ -41,5 +41,9 @@ namespace LemonadeStand
         {
             ice.AddRange(store.SellIce(numberToBuy, bank));
         }
+        public void CurrentInventory()
+        {
+
+        }
     }
 }

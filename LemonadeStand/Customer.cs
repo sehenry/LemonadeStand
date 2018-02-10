@@ -8,7 +8,7 @@ namespace LemonadeStand
 {
     class Customer
     {
-        public void PotentialCustomers()
+        public void PotentialCustomers(Weather weather, Player player)
         {
             
         }

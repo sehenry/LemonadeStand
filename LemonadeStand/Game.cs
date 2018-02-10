@@ -17,6 +17,7 @@ namespace LemonadeStand
         public Bank bank;
         public Inventory inventory;
         public Day day;
+        public Weather weather;
 
         // constructor (SPAWNER)
         public Game()
@@ -29,6 +30,7 @@ namespace LemonadeStand
             bank = new Bank();
             inventory = new Inventory();
             day = new Day();
+            weather = new Weather();
         }
         public void RunGame()
         {
@@ -40,14 +42,12 @@ namespace LemonadeStand
 
                 IngredientPrices(bank);
                 player.GetIngredients(store, bank, inventory);
-                //cost of ingredients gets subtracted from player bank
-                //ingredients get added to inventory
                 player.RecipeDecision();
                 player.CostOfLemonade();
 
                 //player starts day
 
-                customer.PotentialCustomers();
+                customer.PotentialCustomers(weather, player);
                 day.DailyLemonadesPurchased();
                 //bank.AddMoney();
                 //inventory.SubtractInventory();

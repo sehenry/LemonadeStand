@@ -36,12 +36,12 @@ namespace LemonadeStand
         }
         //public void GenerateWeekForecast()
         //{
-        //    for(int i=0; i<7; i++)
+        //    for (int i = 0; i < 7; i++)
         //    {
         //        GenerateWeather();
         //        GenerateTemperature();
         //    }
-            
+
         //    Console.WriteLine($"The weather for the rest of the week is {i}");
         //}
     }
