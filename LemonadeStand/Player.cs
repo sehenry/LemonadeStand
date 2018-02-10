@@ -12,6 +12,7 @@ namespace LemonadeStand
         public Recipe recipe;
         public Bank bank;
 
+
         public Player()
         {
             recipe = new Recipe();
@@ -19,32 +20,32 @@ namespace LemonadeStand
             bank = new Bank();
 
         }
-        public void GetIngredients(Store store, Bank bank, Inventory inventory)
+        public void GetIngredients(Store store, Bank bank)
         {
 
             Console.WriteLine("How many cups would you like?");
             string userInputCup = Console.ReadLine();
             int cupsPurchased;
             cupsPurchased = Int32.Parse(userInputCup);
-            store.SellCups(cupsPurchased, bank);
+            inventory.BuyCups(store.SellCups(cupsPurchased, bank));
             
             Console.WriteLine("How many lemons?\n");
             string userInputLemon = Console.ReadLine();
             int lemonsPurchased;
             lemonsPurchased = Int32.Parse(userInputLemon);
-            store.SellLemons(lemonsPurchased, bank);
+            inventory.BuyLemons(store.SellLemons(lemonsPurchased, bank));
 
             Console.WriteLine("How many cups of sugar?\n");
             string userInputSugar = Console.ReadLine();
             int sugarPurchased;
             sugarPurchased = Int32.Parse(userInputSugar);
-            store.SellSugar(sugarPurchased, bank);
+            inventory.BuySugar(store.SellSugar(sugarPurchased, bank));
 
             Console.WriteLine("And, finally, how much ice?\n");
             string userInputIce = Console.ReadLine();
             int icePurchased;
             icePurchased = Int32.Parse(userInputIce);
-            store.SellIce(icePurchased, bank);
+            inventory.BuyIce(store.SellIce(icePurchased, bank));
 
             Console.WriteLine($"So, for today you have {cupsPurchased} cups, {lemonsPurchased} lemons, {sugarPurchased} cups of sugar and {icePurchased} ice cubes. Now, let's make your lemonade recipe!\n");
      

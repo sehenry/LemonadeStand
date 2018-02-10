@@ -29,8 +29,8 @@ namespace LemonadeStand
 
                         newLemons.Add(new Lemons());
                 }
-            else
-             if (bank.SubtractMoney(lemons.GetBulkCost()))
+
+            else if (bank.SubtractMoney(lemons.GetBulkCost()))
             {
                 for (int i = 0; i < itemsBeingSold; i++)
                 {

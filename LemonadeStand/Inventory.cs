@@ -8,10 +8,11 @@ namespace LemonadeStand
 {
     class Inventory
     {
-        List<Lemons> lemons;
-        List<Cups> cups;
-        List<Sugar> sugar;
-        List<Ice> ice;
+        public List<Lemons> lemons;
+        public List<Cups> cups;
+        public List<Sugar> sugar;
+        public List<Ice> ice;
+        //public int cupsInPitcher;
 
         public Inventory()
         {
@@ -19,31 +20,47 @@ namespace LemonadeStand
             cups = new List<Cups>();
             sugar = new List<Sugar>();
             ice = new List<Ice>();
+            //cupsInPitcher = 0;
         }
         Store store = new Store();
-        public void BuyLemons(int numberToBuy, Bank bank)
+        public void BuyLemons(List<Lemons> lemons)
         {
             
-            lemons.AddRange(store.SellLemons(numberToBuy, bank));
+            this.lemons.AddRange(lemons);
         }
 
-        public void BuyCups(int numberToBuy, Bank bank)
+        public void BuyCups(List<Cups> cups)
         {
-            cups.AddRange(store.SellCups(numberToBuy, bank));
+            this.cups.AddRange(cups);
         }
 
-        public void BuySugar(int numberToBuy, Bank bank)
+        public void BuySugar(List<Sugar> sugar)
         {
-            sugar.AddRange(store.SellSugar(numberToBuy, bank));
+            this.sugar.AddRange(sugar);
         }
 
-        public void BuyIce(int numberToBuy, Bank bank)
+        public void BuyIce(List<Ice> ice)
         {
-            ice.AddRange(store.SellIce(numberToBuy, bank));
+            this.ice.AddRange(ice);
         }
+
+        public bool CheckInventory()
+        {
+            if (lemons.Count == 0 || cups.Count == 0 || sugar.Count == 0 || ice.Count == 0)
+            {
+                Console.WriteLine("You ran out of 1 or more ingredients!");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         public void CurrentInventory()
         {
-
+            Console.WriteLine($"Your current inventory is:\n{lemons.Count} lemons\n{cups.Count} cups\n{sugar.Count} cups of sugar\n{ice.Count} ice cubes\n");
+        }
         }
     }
-}
+

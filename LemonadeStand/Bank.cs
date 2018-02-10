@@ -15,9 +15,11 @@ namespace LemonadeStand
             return playerMoney;
         }
 
-        public void AddMoney()
+        public double AddMoney(double profitAmount)
         {
-           
+            playerMoney += profitAmount;
+
+            return profitAmount;      
         }
        
         public bool SubtractMoney(double costAmount)

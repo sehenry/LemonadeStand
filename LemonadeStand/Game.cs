@@ -15,7 +15,6 @@ namespace LemonadeStand
         public List<Day> days;
         public int dayCounter;
         public Bank bank;
-        public Inventory inventory;
         public Day day;
         public Weather weather;
 
@@ -28,7 +27,6 @@ namespace LemonadeStand
             days = new List<Day>();
             dayCounter = 0;
             bank = new Bank();
-            inventory = new Inventory();
             day = new Day();
             weather = new Weather();
         }
@@ -41,19 +39,20 @@ namespace LemonadeStand
             {
 
                 IngredientPrices(bank);
-                player.GetIngredients(store, bank, inventory);
+                player.GetIngredients(store, bank);
                 player.RecipeDecision();
+                weather.GenerateWeather();
                 player.CostOfLemonade();
 
                 //player starts day
 
-                customer.PotentialCustomers(weather, player);
-                day.DailyLemonadesPurchased();
+                //customer.PotentialCustomers(weather, player);
+                //day.DailyLemonadesPurchased();
                 //bank.AddMoney();
                 //inventory.SubtractInventory();
 
-                day.DisplayDailyProfits();
-                //inventory.DisplayCurrentStock();
+                //day.DisplayDailyProfits();
+                player.inventory.CurrentInventory();
 
 
                 //inventory subtract the amount of lemons, sugar, cups and ice that were 'purchased' by customers that day
