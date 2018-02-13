@@ -73,7 +73,7 @@ namespace LemonadeStand
             else
                 if (bank.SubtractMoney(sugar.GetBulkCost()))
             {
-                for (int i = 0; i < 2; i++)
+                for (int i = 0; i < itemsBeingSold; i++)
                 {
                     newSugar.Add(new Sugar());
                 }
@@ -93,7 +93,7 @@ namespace LemonadeStand
             else
             if (bank.SubtractMoney(ice.GetBulkCost()))
             {
-                for (int i = 0; i < 2; i++)
+                for (int i = 0; i < itemsBeingSold; i++)
                 {
                     newIce.Add(new Ice());
                 }

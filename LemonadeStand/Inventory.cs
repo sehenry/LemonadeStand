@@ -12,6 +12,7 @@ namespace LemonadeStand
         public List<Cups> cups;
         public List<Sugar> sugar;
         public List<Ice> ice;
+        Store store = new Store();
         //public int cupsInPitcher;
 
         public Inventory()
@@ -20,9 +21,8 @@ namespace LemonadeStand
             cups = new List<Cups>();
             sugar = new List<Sugar>();
             ice = new List<Ice>();
-            //cupsInPitcher = 0;
         }
-        Store store = new Store();
+      
         public void BuyLemons(List<Lemons> lemons)
         {
             
@@ -43,6 +43,20 @@ namespace LemonadeStand
         {
             this.ice.AddRange(ice);
         }
+
+        //SubtractInventory method?
+        public void SubtractIngredients()
+        {
+            if(lemons.Count > 0 && ice.Count > 0 && cups.Count >0 && sugar.Count >0)
+            {
+                lemons.RemoveAt(0);
+                ice.RemoveAt(0);
+                cups.RemoveAt(0);
+                sugar.RemoveAt(0);
+            }
+           
+        }
+
 
         public bool CheckInventory()
         {

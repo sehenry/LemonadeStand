@@ -11,6 +11,7 @@ namespace LemonadeStand
         public Inventory inventory;
         public Recipe recipe;
         public Bank bank;
+        public double lemonadePrice;
 
 
         public Player()
@@ -20,7 +21,7 @@ namespace LemonadeStand
             bank = new Bank();
 
         }
-        public void GetIngredients(Store store, Bank bank)
+        public void GetIngredients(Store store)
         {
 
             Console.WriteLine("How many cups would you like?");
@@ -71,9 +72,8 @@ namespace LemonadeStand
         }
 
         public double CostOfLemonade()
+           
         {
-            double lemonadePrice = 0;
-
             Console.WriteLine("You have your inventory, you've made your recipe and you know the weather. Now, how much will you charge for a cup of lemonade? Keep in mind, the colder it is, the less you should charge to try and get more customers. On the flip side, if it's hot, raise those prices! Lemonade will be in high demand!\n");
             string userInput = Console.ReadLine();
 

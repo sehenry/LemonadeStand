@@ -17,6 +17,7 @@ namespace LemonadeStand
         public Bank bank;
         public Day day;
         public Weather weather;
+        public Recipe recipe;
 
         // constructor (SPAWNER)
         public Game()
@@ -26,42 +27,37 @@ namespace LemonadeStand
             customer = new Customer();
             days = new List<Day>();
             dayCounter = 0;
-            bank = new Bank();
             day = new Day();
             weather = new Weather();
+           
         }
         public void RunGame()
         {
             GameRules();
             int numberOfDays = ChooseDays();
+            
 
             for (int i = 0; i < numberOfDays; i++)
             {
 
-                IngredientPrices(bank);
-                player.GetIngredients(store, bank);
+                IngredientPrices(player.bank);
+                player.GetIngredients(store);
                 player.RecipeDecision();
                 weather.GenerateWeather();
                 player.CostOfLemonade();
 
-                //player starts day
-
-                //customer.PotentialCustomers(weather, player);
-                //day.DailyLemonadesPurchased();
+                int sales = customer.PotentialCustomers(weather, player).Count;
+                day.DailyLemonadesPurchased(sales);
                 //bank.AddMoney();
                 //inventory.SubtractInventory();
-
-                //day.DisplayDailyProfits();
+                day.DisplayDailyProfits();
                 player.inventory.CurrentInventory();
-
 
                 //inventory subtract the amount of lemons, sugar, cups and ice that were 'purchased' by customers that day
                 //each purchased lemonade will subtract the amount of ingredients used per lemonade that the user picked. 
                 //game totals the sales for the day
                 //inventory subtracts the ingredients used for the day
                 //game reports profits to user for the day
-                //game reports current inventory to user
-                //player moves onto next day and chooses to purchase ingredients, and make recipe again
             }
         }
         // member methods (CAN DO)
@@ -107,7 +103,7 @@ namespace LemonadeStand
         public void IngredientPrices(Bank bank)
         {
            double currentMoney = bank.GetBalance();
-            Console.WriteLine($"You currently have {currentMoney} in your bank. To run a successful Lemonade stand, you're going to need cups, lemons, sugar and ice. You can buy in bulk, using the number shown, or buy a different amount of your choosing.\nCups cost:\n$15.30 for 50 cups, .32 per cup\nLemons cost:\n$22.90 for 30 Lemons, .80 per lemon\nSugar costs:\n$15.70 for 20 cups, .80 per cup of sugar\nIce costs:\n$21.90 for 250 ice cubes, .09 per cube.\n");
+            Console.WriteLine($"You currently have {currentMoney} in your bank. You can buy in bulk, using the number shown, or buy a different amount of your choosing.\nCups cost:\n$15.30 for 50 cups, .32 per cup\nLemons cost:\n$22.90 for 30 Lemons, .80 per lemon\nSugar costs:\n$15.70 for 20 cups, .80 per cup of sugar\nIce costs:\n$21.90 for 250 ice cubes, .09 per cube.\n");
         }
         
        
