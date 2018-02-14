@@ -8,16 +8,6 @@ namespace LemonadeStand
 {
     class Store
     {
-        public int lemons;
-        public int cups;
-        public int sugar;
-        public int ice;
-
-        public Store()
-        {
-
-        }
-
         public List<Lemons> SellLemons(int itemsBeingSold, Bank bank)
         {
             List<Lemons> newLemons = new List<Lemons>();

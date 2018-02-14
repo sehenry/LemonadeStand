@@ -13,22 +13,18 @@ namespace LemonadeStand
         public List<Sugar> sugar;
         public List<Ice> ice;
         Store store = new Store();
-        //public int cupsInPitcher;
-
         public Inventory()
         {
             lemons = new List<Lemons>();
             cups = new List<Cups>();
             sugar = new List<Sugar>();
             ice = new List<Ice>();
-        }
-      
+        }     
         public void BuyLemons(List<Lemons> lemons)
         {
             
             this.lemons.AddRange(lemons);
         }
-
         public void BuyCups(List<Cups> cups)
         {
             this.cups.AddRange(cups);
@@ -43,8 +39,6 @@ namespace LemonadeStand
         {
             this.ice.AddRange(ice);
         }
-
-        //SubtractInventory method?
         public void SubtractIngredients()
         {
             if(lemons.Count > 0 && ice.Count > 0 && cups.Count >0 && sugar.Count >0)
@@ -53,11 +47,8 @@ namespace LemonadeStand
                 ice.RemoveAt(0);
                 cups.RemoveAt(0);
                 sugar.RemoveAt(0);
-            }
-           
+            }           
         }
-
-
         public bool CheckInventory()
         {
             if (lemons.Count == 0 || cups.Count == 0 || sugar.Count == 0 || ice.Count == 0)
@@ -70,7 +61,6 @@ namespace LemonadeStand
                 return true;
             }
         }
-
         public void CurrentInventory()
         {
             Console.WriteLine($"Your current inventory is:\n{lemons.Count} lemons\n{cups.Count} cups\n{sugar.Count} cups of sugar\n{ice.Count} ice cubes\n");

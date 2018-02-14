@@ -8,8 +8,6 @@ namespace LemonadeStand
 {
     class Customer
     {
-        
-
         public Customer()
         {
         }
@@ -39,10 +37,7 @@ namespace LemonadeStand
                         player.inventory.SubtractIngredients();
                 }
             }
-            return Purchases;       //each lemonade purchased needs to subtract 1 from each ingredient in the inventory
-                                    //each lemonade sold needs to be added to the total lemonades sold in the Day class
-                                    //each lemonade purchased needs to add the price of lemonade to the Bank class
-                                    //
+            return Purchases;  
                                     
         }
     }

@@ -8,10 +8,6 @@ namespace LemonadeStand
 {
     class Recipe
     {
-        Lemons lemons;
-        Sugar sugar;
-        Ice ice;
-        Cups cups;
         public void ComputerRecipe()
         {
             Console.WriteLine("The computer recipe will use 4 lemons, 4 cups of sugar and 4 ice cubes. You can choose to create your own recipe any day you'd like moving forward.\n");

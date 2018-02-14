@@ -6,20 +6,16 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Game // IS A
+    class Game
     {
-        // member variables (HAS A)
         public Player player;
         public Store store;
         public Customer customer;
         public List<Day> days;
         public int dayCounter;
-        public Bank bank;
         public Day day;
         public Weather weather;
-        public Recipe recipe;
 
-        // constructor (SPAWNER)
         public Game()
         {
             player = new Player();
@@ -28,15 +24,12 @@ namespace LemonadeStand
             days = new List<Day>();
             dayCounter = 0;
             day = new Day();
-            weather = new Weather();
-           
+            weather = new Weather();          
         }
         public void RunGame()
         {
             GameRules();
             int numberOfDays = ChooseDays();
-            
-
             for (int i = 0; i < numberOfDays; i++)
             {
 
@@ -48,19 +41,10 @@ namespace LemonadeStand
 
                 int sales = customer.PotentialCustomers(weather, player).Count;
                 day.DailyLemonadesPurchased(sales);
-                //bank.AddMoney();
-                //inventory.SubtractInventory();
                 day.DisplayDailyProfits();
                 player.inventory.CurrentInventory();
-
-                //inventory subtract the amount of lemons, sugar, cups and ice that were 'purchased' by customers that day
-                //each purchased lemonade will subtract the amount of ingredients used per lemonade that the user picked. 
-                //game totals the sales for the day
-                //inventory subtracts the ingredients used for the day
-                //game reports profits to user for the day
             }
         }
-        // member methods (CAN DO)
         public void GameRules()
         {
             Console.WriteLine("Welcome to Lemonade Stand! You will have a $200 budget to start your business.\nThe goal of the game is to make as much money you can in 7, 14, or 21 days.\nYou will buy cups, lemons, sugar and ice each day.\nYou must take into account the weather every day and plan accordingly! The colder it is, the less likely your customers will be to purchase lemonade, so think about lowering the cost of your lemonade. On those hot days, try charging more!\nAt the end of the game, you'll see how much money you've grossed!\nAre you ready to play?");
@@ -104,8 +88,6 @@ namespace LemonadeStand
         {
            double currentMoney = bank.GetBalance();
             Console.WriteLine($"You currently have {currentMoney} in your bank. You can buy in bulk, using the number shown, or buy a different amount of your choosing.\nCups cost:\n$15.30 for 50 cups, .32 per cup\nLemons cost:\n$22.90 for 30 Lemons, .80 per lemon\nSugar costs:\n$15.70 for 20 cups, .80 per cup of sugar\nIce costs:\n$21.90 for 250 ice cubes, .09 per cube.\n");
-        }
-        
-       
+        }      
     }
 }

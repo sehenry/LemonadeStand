@@ -8,7 +8,6 @@ namespace LemonadeStand
 {
     class Weather
     {
-        // member variables (HAS A)
         public string weather;
         public int temperature;
 
@@ -32,17 +31,6 @@ namespace LemonadeStand
             };
             temperature = temperatureOptions[random.Next(0, temperatureOptions.Length)];
             Console.WriteLine($"The temperature is: {temperature}\n");
-
         }
-        //public void GenerateWeekForecast()
-        //{
-        //    for (int i = 0; i < 7; i++)
-        //    {
-        //        GenerateWeather();
-        //        GenerateTemperature();
-        //    }
-
-        //    Console.WriteLine($"The weather for the rest of the week is {i}");
-        //}
     }
 }
